@@ -1,0 +1,16 @@
+.chisono{
+    font-size: 2.5em; /* Dimensione del font */
+    font-weight: bold; 
+    background: linear-gradient(90deg, #6a11cb, #ff4b2b); /* Gradiente tra viola e rosa */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.3; /* Aumenta l'altezza della linea per evitare tagli */
+}
+
+.testo{
+    color: grey;
+    font-size: larger;
+}
+

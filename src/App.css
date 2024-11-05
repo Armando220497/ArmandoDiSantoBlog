@@ -1,0 +1,85 @@
+body {
+background-color:#FFFFFF ;
+}
+
+
+.margin-top{
+  margin-top: 10%;
+}
+/* Modalità scura */
+body.dark-mode {
+  background-color: #1E1E1E ;
+  color: #f1f1f1;
+}
+
+
+.toggle-icon {
+  position: fixed;
+  top: 10px; /* Regola per posizionare l'elemento in alto */
+  left: 50%; /* Posiziona l'elemento al centro orizzontalmente */
+  transform: translateX(-50%); /* Centra esattamente l'icona */
+  width: 250px; /* Dimensioni dell'icona */
+  cursor: pointer;
+  z-index: 1000;
+}
+
+
+@media screen and (max-width: 768px) {
+  .toggle-icon {
+    position: fixed;
+    top: -10px;
+    right: 15%;
+    width: 180px; /* Dimensioni dell'icona */
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+}
+
+.decorazione {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(90deg, #6a11cb, #ff4b2b);
+  border-radius: 50% 50% 0% 100% / 0% 0% 100% 100% ;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  opacity: 0.9;
+  z-index: -1; /* Assicura che la forma stia dietro al contenuto principale */
+}
+
+.decorazione2 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(90deg, #6a11cb, #ff4b2b);
+  border-radius:0% 100% 100% 0% / 0% 100% 0% 100%  ;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.9;
+  z-index: -1; /* Assicura che la forma stia dietro al contenuto principale */
+}
+@media screen and (max-width: 768px) {
+  .decorazione {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(90deg, #6a11cb, #ff4b2b);
+      border-radius: 50% 50% 0% 100% / 0% 0% 100% 100% ;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      opacity: 0.9;
+      z-index: -1; /* Assicura che la forma stia dietro al contenuto principale */
+    }  
+    .decorazione2 {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(90deg, #6a11cb, #ff4b2b);
+      border-radius:0% 100% 100% 0% / 0% 100% 0% 100%  ;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.9;
+      z-index: -1; /* Assicura che la forma stia dietro al contenuto principale */
+    }
+}

@@ -1,0 +1,37 @@
+
+  /* Stile generale della flip card */
+  .flip-card {
+    width: 18rem;
+    height: 18rem;
+    perspective: 1000px; /* Effetto 3D */
+  }
+  
+  .flip-card-inner {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+
+  .flip-card-back {
+    background-image: url("/img/backgrounImg.jpg");
+    background-size: cover; /* Assicura che l'immagine copra l'intera card */
+    background-position: center; /* Centra l'immagine */
+    color: white;
+    transform: rotateY(180deg);
+  }
+  

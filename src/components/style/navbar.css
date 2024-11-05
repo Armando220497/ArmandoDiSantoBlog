@@ -1,0 +1,28 @@
+.title-site{
+  font-weight: bolder !important;
+ margin-right: 3% !important;
+ color: #3D39E1 !important;
+
+}   
+
+.title-site:hover{
+  color: #DD3E4F;;
+}
+  
+
+.active{
+    color: grey !important;
+    font-size: large;
+}
+.active:hover {
+
+    background: linear-gradient(90deg, #6a11cb, #ff4b2b); /* Gradiente tra viola e rosa */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    transition: color 0.5s ease-in-out; /* Transizione fluida del colore */
+
+
+}
+
