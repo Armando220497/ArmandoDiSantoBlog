@@ -1,10 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../components/style/blog.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function Blog() {
   const [articles, setArticles] = useState([]);
+  const carouselInnerRef = useRef(null); // Riferimento per il contenitore del carosello
 
   useEffect(() => {
     // Carica l'indice degli articoli
@@ -25,6 +26,23 @@ function Blog() {
       );
   }, []);
 
+  useEffect(() => {
+    // Funzione per resettare lo scroll in cima a ogni cambio di slide
+    const handleSlide = () => {
+      if (carouselInnerRef.current) {
+        carouselInnerRef.current.scrollTop = 0; // Resetta la posizione di scorrimento
+      }
+    };
+
+    const carouselElement = document.querySelector("#articlesCarousel");
+    carouselElement.addEventListener("slide.bs.carousel", handleSlide);
+
+    // Cleanup dell'evento quando il componente viene smontato
+    return () => {
+      carouselElement.removeEventListener("slide.bs.carousel", handleSlide);
+    };
+  }, []);
+
   return (
     <>
       <h1 className="blog-title">Blog</h1>
@@ -32,7 +50,7 @@ function Blog() {
       <div className="container mt-5">
         {/* Carosello di Bootstrap senza scorrimento automatico */}
         <div id="articlesCarousel" className="carousel slide">
-          <div className="carousel-inner">
+          <div ref={carouselInnerRef} className="carousel-inner">
             {articles.map((article, index) => (
               <div
                 key={index}

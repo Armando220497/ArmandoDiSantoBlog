@@ -51,11 +51,44 @@
 }
 
 .carousel-inner {
-    min-height: 400px; /* Imposta un'altezza minima fissa per il contenuto del carosello */
-    display: flex;
-    align-items: center; /* Centra verticalmente i contenuti degli articoli */
+    position: relative;
+    min-height: 400px; /* Altezza minima */
+    height: 400px; /* Altezza fissa */
+    overflow-y: auto; /* Consente lo scorrimento verticale del contenuto */
+    padding: 20px; /* Aggiunge un po' di spazio intorno al testo */
+    box-sizing: border-box; /* Assicura che il padding sia compreso nell'altezza totale */
+    display: block; /* Impedisce l'effetto di compressione del testo */
 }
-
 .carousel-item {
     min-height: 400px; /* Mantiene un’altezza costante per ogni slide */
 }
+
+@media screen and (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        position: absolute;
+        bottom: 20px; /* Posiziona i pulsanti fissi in basso */
+        width: auto;
+        height: 40px; /* Altezza fissa per i pulsanti */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(0); /* Assicura che non ci sia traslazione verticale */
+    }
+  
+    .carousel-control-prev {
+        left: 10px; /* Posiziona il pulsante di sinistra */
+    }
+  
+    .carousel-control-next {
+        right: 10px; /* Posiziona il pulsante di destra */
+    }
+  
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 50%;
+        height: 100%; /* Occupa l'altezza del contenitore del pulsante */
+    }
+  }

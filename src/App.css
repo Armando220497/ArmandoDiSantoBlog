@@ -59,13 +59,45 @@ body.dark-mode {
   opacity: 0.9;
   z-index: -1; /* Assicura che la forma stia dietro al contenuto principale */
 }
+
+.toggle-icon {
+  position: absolute;
+}
+
+.tooltip-text {
+  font-size: 0.8em; /* Testo piccolo */
+  color: grey;
+  position: absolute;
+  top: 120px; /* Posiziona la scritta sotto l'icona */
+  left: 54%;
+  transform: translateX(-50%);
+  text-align: center;
+  cursor: pointer;
+}
+
+.tooltip-text::before {
+  content: "← "; /* Freccia rivolta verso sinistra */
+  font-size: 1em;
+  color: grey;
+}
+
+/* Cambia colore del testo in modalità scura */
+body.dark-mode .tooltip-text {
+  color: white;
+}
+
+body.dark-mode .tooltip-text::before {
+  color: white;
+}
+
+
 @media screen and (max-width: 768px) {
   .decorazione {
       width: 100px;
       height: 100px;
       background: linear-gradient(90deg, #6a11cb, #ff4b2b);
       border-radius: 50% 50% 0% 100% / 0% 0% 100% 100% ;
-      position: absolute;
+      position: fixed;
       top: 0px;
       right: 0px;
       opacity: 0.9;
@@ -76,10 +108,31 @@ body.dark-mode {
       height: 100px;
       background: linear-gradient(90deg, #6a11cb, #ff4b2b);
       border-radius:0% 100% 100% 0% / 0% 100% 0% 100%  ;
-      position: absolute;
-      bottom: 0px;
+      position: fixed;
+     bottom: 0px;
       left: 0px;
       opacity: 0.9;
       z-index: -1; /* Assicura che la forma stia dietro al contenuto principale */
+    }
+
+    .tooltip-text {
+      font-size: 0.8em; /* Testo piccolo */
+      color: grey;
+      position: absolute;
+      top: 80px; /* Posiziona la scritta sotto l'icona */
+      left: 48%;
+      transform: translateX(-50%);
+      text-align: center;
+      cursor: pointer;
+    }
+    
+    .tooltip-text::before {
+      content: ""; /* Rimuove la freccia a sinistra */
+    }
+
+    .tooltip-text::after {
+      content: " →"; /* Freccia rivolta verso sinistra */
+      font-size: 1em;
+      color: grey;
     }
 }

@@ -37,6 +37,7 @@ function App() {
         alt="Toggle Dark Mode"
         className="toggle-icon"
       />
+      <span className="tooltip-text">{darkMode ? "Accendi" : "Spegni"}</span>
 
       <div className="container margin-top">
         <Routes>

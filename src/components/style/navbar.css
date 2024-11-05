@@ -26,3 +26,13 @@
 
 }
 
+.custom-navbar + .page-content {
+  padding-top: 70px; /* Altezza della navbar, adattala se necessario */
+}
+
+/* Aggiungi più margine per schermi piccoli quando il menu è espanso */
+@media (max-width: 992px) {
+  .navbar-collapse.show + .page-content {
+    margin-top: 200px; /* Altezza aggiuntiva per il dropdown, adattala */
+  }
+}
