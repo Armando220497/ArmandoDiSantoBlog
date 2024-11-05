@@ -8,11 +8,7 @@ function Contatti({ darkMode }) {
       <div className="decorazione">
         {/* Usa il prop `darkMode` per decidere quale immagine mostrare */}
         <img
-          src={
-            darkMode
-              ? "/public/img/1552354-ffffff.png"
-              : "/public/img/1552354.png"
-          }
+          src={darkMode ? "/img/aereo-bianco.png" : "/img/aereo-nero.png"}
           alt="Decorazione"
           className="small-img"
         />
