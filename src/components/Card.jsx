@@ -13,7 +13,7 @@ function Card() {
         <div className="flip-card-front">
           <img
             className="card-img-custom"
-            src="/public/img/WhatsApp Image 2024-11-02 at 16.24.12.jpeg"
+            src="/public/img/immagineDiProfilo.jpeg"
             alt="example"
             style={{ width: "18rem", height: "18rem" }}
           />

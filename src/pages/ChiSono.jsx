@@ -6,7 +6,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function Chisono() {
   return (
-    <>
+    <div className="chisono-container">
       <h1 className="chisono">Coding & Learning</h1>
       <p className="testo">
         Costruisco il mio futuro un codice alla volta,
@@ -24,7 +24,7 @@ function Chisono() {
           style={{ color: "#3D39E1", marginRight: "10px" }}
         />
       </a>
-    </>
+    </div>
   );
 }
 

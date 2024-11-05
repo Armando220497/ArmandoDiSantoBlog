@@ -1,17 +1,61 @@
-.blog-title{
-    font-size: 2.5em; /* Dimensione del font */
-    font-weight: bold; 
-    background: linear-gradient(180deg, #6a11cb, #ff4b2b); /* Gradiente tra viola e rosa */
+.blog-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: grey; /* Colore fisso per il titolo */
+    background: linear-gradient(180deg, #6a11cb, #ff4b2b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    line-height: 1.3; /* Aumenta l'altezza della linea per evitare tagli */
-  
-
+    line-height: 1.3;
 }
 
-.container-blog {
+.article-title {
+    color: grey; /* Colore del titolo dell'articolo in grigio */
+}
+
+.article-content {
+    color: black; /* Colore del testo di default */
+}
+
+/* Modalità dark */
+.dark-mode .article-content {
+    color: white; /* Colore del testo in modalità scura */
+}
+
+.carousel {
+    position: relative; /* Necessario per il posizionamento assoluto delle frecce */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute; /* Fissa le frecce nella stessa posizione */
+    top: 50%; /* Centra le frecce verticalmente nel carosello */
+    transform: translateY(-50%); /* Allinea perfettamente le frecce al centro verticale */
+    width: auto;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.carousel-control-prev {
+    left: -3%;
+}
+
+.carousel-control-next {
+    right: -3%;
+}
+
+.carousel-inner {
+    min-height: 400px; /* Imposta un'altezza minima fissa per il contenuto del carosello */
     display: flex;
-    justify-content: center;
+    align-items: center; /* Centra verticalmente i contenuti degli articoli */
+}
+
+.carousel-item {
+    min-height: 400px; /* Mantiene un’altezza costante per ogni slide */
 }

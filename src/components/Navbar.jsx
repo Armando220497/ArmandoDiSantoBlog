@@ -12,14 +12,19 @@ function CustomNavbar() {
         <Navbar.Toggle aria-controls="navbarNavAltMarkup" />
         <Navbar.Collapse id="navbarNavAltMarkup">
           <Nav className="navbar-nav">
-            <Nav.Link as={Link} to="/" className="active" aria-current="page">
+            <Nav.Link
+              as={Link}
+              to="/"
+              className="active-nav"
+              aria-current="page"
+            >
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/contatti" className="active">
-              Contatti
-            </Nav.Link>
-            <Nav.Link as={Link} to="/blog" className="active">
+            <Nav.Link as={Link} to="/blog" className="active-nav">
               Blog
+            </Nav.Link>
+            <Nav.Link as={Link} to="/contatti" className="active-nav">
+              Contatti
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

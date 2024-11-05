@@ -10,11 +10,11 @@
 }
   
 
-.active{
+.active-nav{
     color: grey !important;
-    font-size: large;
+    font-size: larger !important;
 }
-.active:hover {
+.active-nav:hover {
 
     background: linear-gradient(90deg, #6a11cb, #ff4b2b); /* Gradiente tra viola e rosa */
     -webkit-background-clip: text;

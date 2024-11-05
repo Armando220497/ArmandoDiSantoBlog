@@ -14,8 +14,8 @@ body.dark-mode {
 
 
 .toggle-icon {
-  position: fixed;
-  top: 10px; /* Regola per posizionare l'elemento in alto */
+  position: absolute;
+  top: -10px; /* Regola per posizionare l'elemento in alto */
   left: 50%; /* Posiziona l'elemento al centro orizzontalmente */
   transform: translateX(-50%); /* Centra esattamente l'icona */
   width: 250px; /* Dimensioni dell'icona */
@@ -26,9 +26,9 @@ body.dark-mode {
 
 @media screen and (max-width: 768px) {
   .toggle-icon {
-    position: fixed;
+    position: absolute;
     top: -10px;
-    right: 15%;
+    left: 240px;
     width: 180px; /* Dimensioni dell'icona */
     cursor: pointer;
     z-index: 1000;

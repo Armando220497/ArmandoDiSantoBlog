@@ -1,78 +1,93 @@
+import PropTypes from "prop-types"; // Importa PropTypes
 import { Container, Row, Col } from "react-bootstrap";
+import "../components/style/contatti.css";
 
-function Contatti() {
+function Contatti({ darkMode }) {
   return (
-    <Container className="mt-5" style={{ textAlign: "center" }}>
-      <h1
-        style={{
-          textAlign: "center",
-          fontSize: "2.5em", // Dimensione del font
-          fontWeight: "bold",
-          background: "linear-gradient(90deg, #6a11cb, #ff4b2b)", // Gradiente viola e rosa
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text", // Compatibilità per altri browser
-          color: "transparent", // Rende il testo trasparente per mostrare il gradiente
-          lineHeight: "1.3", // Aumenta l'altezza della linea
-        }}
-      >
-        Contatti & Social
-      </h1>
+    <>
+      <div className="decorazione">
+        {/* Usa il prop `darkMode` per decidere quale immagine mostrare */}
+        <img
+          src={
+            darkMode
+              ? "/public/img/1552354-ffffff.png"
+              : "/public/img/1552354.png"
+          }
+          alt="Decorazione"
+          className="small-img"
+        />
+      </div>
 
-      <Row className="mt-5">
-        <Col md={6}>
-          <h4 style={{ color: "grey" }}>Email</h4>
-          <p>
-            <i className="fas fa-envelope"></i>{" "}
-            <a href="mailto:armando.disanto@hotmail.com">
-              armando.disanto@hotmail.com
-            </a>
-          </p>
-        </Col>
-        <Col md={6}>
-          <h4 style={{ color: "grey" }}>Facebook</h4>
-          <p>
-            <i className="fab fa-facebook"></i>{" "}
-            <a
-              href="https://www.facebook.com/armando.disanto1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              facebook.com/armando-disanto
-            </a>
-          </p>
-        </Col>
-      </Row>
-      <Row className="mt-4">
-        <Col md={6}>
-          <h4 style={{ color: "grey" }}>LinkedIn</h4>
-          <p>
-            <i className="fab fa-linkedin"></i>{" "}
-            <a
-              href="https://www.linkedin.com/in/armando-di-santo-06415b273"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              linkedin.com/armando-disanto
-            </a>
-          </p>
-        </Col>
-        <Col md={6}>
-          <h4 style={{ color: "grey" }}>Instagram</h4>
-          <p>
-            <i className="fab fa-instagram"></i>{" "}
-            <a
-              href="https://www.instagram.com/armando.di.santo/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              instagram.com/armando.di.santo
-            </a>
-          </p>
-        </Col>
-      </Row>
-    </Container>
+      <Container className="contatti-container mt-5">
+        <h1 className="contatti-title">Contatti & Social</h1>
+
+        <Row className="mt-5">
+          <Col md={6} className="contatti-section">
+            <h4 className="contatti-label">Email</h4>
+            <p>
+              <i className="fas fa-envelope"></i>{" "}
+              <a
+                href="mailto:armando.disanto@hotmail.com"
+                className="contatti-link"
+              >
+                armando.disanto@hotmail.com
+              </a>
+            </p>
+          </Col>
+          <Col md={6} className="contatti-section">
+            <h4 className="contatti-label">Facebook</h4>
+            <p>
+              <i className="fab fa-facebook"></i>{" "}
+              <a
+                href="https://www.facebook.com/armando.disanto1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contatti-link"
+              >
+                facebook.com/armando-disanto
+              </a>
+            </p>
+          </Col>
+        </Row>
+
+        <Row className="mt-4">
+          <Col md={6} className="contatti-section">
+            <h4 className="contatti-label">LinkedIn</h4>
+            <p>
+              <i className="fab fa-linkedin"></i>{" "}
+              <a
+                href="https://www.linkedin.com/in/armando-di-santo-06415b273"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contatti-link"
+              >
+                linkedin.com/armando-disanto
+              </a>
+            </p>
+          </Col>
+          <Col md={6} className="contatti-section">
+            <h4 className="contatti-label">Instagram</h4>
+            <p>
+              <i className="fab fa-instagram"></i>{" "}
+              <a
+                href="https://www.instagram.com/armando.di.santo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contatti-link"
+              >
+                instagram.com/armando.di.santo
+              </a>
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 }
+
+// Aggiungi la validazione delle props
+Contatti.propTypes = {
+  darkMode: PropTypes.bool.isRequired, // `darkMode` è una prop di tipo booleano e obbligatoria
+};
 
 export default Contatti;

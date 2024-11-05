@@ -53,7 +53,7 @@ function App() {
               </div>
             }
           />
-          <Route path="/contatti" element={<Contatti />} />
+          <Route path="/contatti" element={<Contatti darkMode={darkMode} />} />
           <Route path="/blog" element={<Blog />} /> {/* Corretto */}
         </Routes>
       </div>
