@@ -5,10 +5,9 @@ import { useEffect, useState, useRef } from "react";
 
 function Blog() {
   const [articles, setArticles] = useState([]);
-  const carouselInnerRef = useRef(null); // Riferimento per il contenitore del carosello
+  const carouselInnerRef = useRef(null);
 
   useEffect(() => {
-    // Carica l'indice degli articoli
     fetch(
       "https://raw.githubusercontent.com/Armando220497/Blog-articles/main/articles.json"
     )
@@ -19,7 +18,7 @@ function Blog() {
         );
       })
       .then((data) => {
-        setArticles(data); // Imposta lo stato con tutti gli articoli caricati
+        setArticles(data);
       })
       .catch((error) =>
         console.error("Errore nel caricamento degli articoli:", error)
@@ -27,17 +26,15 @@ function Blog() {
   }, []);
 
   useEffect(() => {
-    // Funzione per resettare lo scroll in cima a ogni cambio di slide
     const handleSlide = () => {
       if (carouselInnerRef.current) {
-        carouselInnerRef.current.scrollTop = 0; // Resetta la posizione di scorrimento
+        carouselInnerRef.current.scrollTop = 0;
       }
     };
 
     const carouselElement = document.querySelector("#articlesCarousel");
     carouselElement.addEventListener("slide.bs.carousel", handleSlide);
 
-    // Cleanup dell'evento quando il componente viene smontato
     return () => {
       carouselElement.removeEventListener("slide.bs.carousel", handleSlide);
     };
@@ -48,7 +45,6 @@ function Blog() {
       <h1 className="blog-title">Blog</h1>
 
       <div className="container mt-5">
-        {/* Carosello di Bootstrap senza scorrimento automatico */}
         <div id="articlesCarousel" className="carousel slide">
           <div ref={carouselInnerRef} className="carousel-inner">
             {articles.map((article, index) => (
@@ -58,7 +54,10 @@ function Blog() {
               >
                 <div className="d-flex flex-column align-items-center text-center p-4">
                   <h2 className="article-title">{article.title}</h2>
-                  <p className="article-content">{article.content}</p>
+                  <div
+                    className="article-content"
+                    dangerouslySetInnerHTML={{ __html: article.content }}
+                  ></div>
                   <small>
                     {article.date} - {article.author}
                   </small>
