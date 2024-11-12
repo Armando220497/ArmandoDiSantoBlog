@@ -29,7 +29,13 @@ function CustomNavbar() {
         <Navbar.Toggle
           aria-controls="navbarNavAltMarkup"
           onClick={() => setExpanded(!expanded)}
-        />
+        >
+          <img
+            src="/img/nav-icon.png" // Percorso dell'icona nella cartella public
+            alt="Menu"
+            className="custom-toggle-icon"
+          />
+        </Navbar.Toggle>
         <Navbar.Collapse id="navbarNavAltMarkup">
           <Nav className="navbar-nav">
             <Nav.Link

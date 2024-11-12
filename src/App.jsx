@@ -5,6 +5,7 @@ import Card from "./components/Card";
 import Chisono from "./pages/ChiSono";
 import Contatti from "./pages/Contatti";
 import Blog from "./pages/Blog";
+import NotFound from "./pages/NotFound";
 
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -56,6 +57,7 @@ function App() {
           />
           <Route path="/contatti" element={<Contatti darkMode={darkMode} />} />
           <Route path="/blog" element={<Blog />} /> {/* Corretto */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </>

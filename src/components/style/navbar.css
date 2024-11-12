@@ -30,6 +30,34 @@
   padding-top: 70px; /* Altezza della navbar, adattala se necessario */
 }
 
+/* Rimuovere il contorno e lo sfondo del toggle */
+.navbar-toggler {
+  border: none !important; /* Rimuove il contorno */
+  background-color: transparent !important; /* Rimuove lo sfondo */
+  box-shadow: none !important; /* Rimuove l'ombra */
+  padding: 0 !important; /* Rimuove lo spazio interno */
+  margin: 0 !important; /* Elimina margini aggiuntivi */
+  display: flex; /* Allinea il contenuto */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra orizzontalmente */
+}
+
+.custom-toggle-icon {
+  width: 35px; /* Dimensione personalizzata */
+  height: 35px;
+  display: block;
+  margin: 0 auto;
+}
+
+.navbar-toggler:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Aggiunge un leggero effetto al passaggio del mouse */
+}
+
+.navbar-toggler:focus {
+  outline: none; /* Rimuove il contorno di focus */
+}
+
+
 /* Aggiungi più margine per schermi piccoli quando il menu è espanso */
 @media (max-width: 992px) {
   .navbar-collapse.show + .page-content {
