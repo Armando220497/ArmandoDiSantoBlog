@@ -1,7 +1,7 @@
+/* Titolo principale del blog */
 .blog-title {
     font-size: 2.5em;
     font-weight: bold;
-    color: grey; /* Colore fisso per il titolo */
     background: linear-gradient(180deg, #6a11cb, #ff4b2b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -10,85 +10,260 @@
     line-height: 1.3;
 }
 
+/* Titolo dell'articolo */
 .article-title {
-    color: grey; /* Colore del titolo dell'articolo in grigio */
+    font-size: 2.5em;
+    font-weight: bold;
+    background: linear-gradient(90deg, #6a11cb, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.3;
 }
 
+/* Stili per h4 all'interno degli articoli */
+.article-content h4 {
+    font-size: 1.5em;
+    font-weight: bold;
+    background: linear-gradient(90deg, #6a11cb, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.3;
+}
+
+/* Data dell'articolo */
+.article-date {
+    color: black;
+}
+
+/* Stili per i paragrafi dentro gli articoli */
+.article-content p {
+    font-size: 1.1em;
+}
+
+/* Contenuto degli articoli */
 .article-content {
-    color: black; /* Colore del testo di default */
-}
-
-/* Modalità dark */
-.dark-mode .article-content {
-    color: white; /* Colore del testo in modalità scura */
-}
-
-.carousel {
-    position: relative; /* Necessario per il posizionamento assoluto delle frecce */
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    position: absolute; /* Fissa le frecce nella stessa posizione */
-    top: 50%; /* Centra le frecce verticalmente nel carosello */
-    transform: translateY(-50%); /* Allinea perfettamente le frecce al centro verticale */
-    width: auto;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.carousel-control-prev {
-    left: -3%;
-}
-
-.carousel-control-next {
-    right: -3%;
-}
-
-.carousel-inner {
+    font-size: 1em;
+    line-height: 1.6;
+    color: black;
+    transition: color 0.3s ease;
     position: relative;
-    min-height: 400px; /* Altezza minima */
-    height: 400px; /* Altezza fissa */
-    overflow-y: auto; /* Consente lo scorrimento verticale del contenuto */
-    padding: 20px; /* Aggiunge un po' di spazio intorno al testo */
-    box-sizing: border-box; /* Assicura che il padding sia compreso nell'altezza totale */
-    display: block; /* Impedisce l'effetto di compressione del testo */
+    opacity: 1;
+    transform: none;
 }
-.carousel-item {
-    min-height: 400px; /* Mantiene un’altezza costante per ogni slide */
+
+/* Modalità dark per il contenuto degli articoli */
+.dark-mode .article-content {
+    color: white;
+}
+
+.dark-mode .article-date {
+    color: white;
+}
+
+/* Contenitore degli articoli */
+.container {
+    position: center;
+    z-index: 0;
+    margin-bottom: 100px;
+}
+
+/* Effetti di transizione per comparsa e scomparsa */
+.article-content.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.article-content.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+    z-index: 0;
+}
+
+/* Lista degli indici */
+.index-list {
+    position: sticky;
+    top: 10px;
+    max-width: 200px;
+    margin-left: 20px;
+    z-index: 1000;
+}
+
+.index-list li {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.index-list li:hover {
+    background-color: #e9ecef;
+    transform: scale(1.05);
+}
+
+.index-list li.active {
+    background-color: #6a11cb;
+    color: white;
+    font-weight: bold;}
+
+/* Stili per le card */
+.card {
+    border-radius: 10px;
+    max-width: 400px;
+    height: 180px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: black;
+    padding: 5px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in;
+    border: none;
+    cursor: pointer;
+    backdrop-filter: blur(10px); /* Effetto di sfocatura */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilità con Safari */
+}
+
+/* Modalità dark per le card con effetto vetro */
+.dark-mode .card {
+    border-radius: 10px;
+    max-width: 400px;
+    height: 180px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 5px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in;
+    border: none;
+    cursor: pointer;
+    backdrop-filter: blur(10px); /* Effetto di sfocatura */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilità con Safari */
+}
+
+/* Hover effects per la card */
+.card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -1px;
+    right: -15px;
+    background: linear-gradient(90deg, rgba(106, 17, 203, 0.8), rgba(255, 75, 43, 0.8));
+    height: 100%;
+    width: 25px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.2s ease-out;
+}
+
+.card:hover::before {
+    transition-delay: 0.2s;
+    transform: scale(40);
+}
+
+.card:hover {
+    color: #ffffff;
+}
+
+.card p {
+    padding: 10px 0;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsività */
+@media screen and (max-width: 768px) {
+    .blog-title {
+        font-size: 2em;
+    }
+
+    .article-container {
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .index-list {
+        margin-left: 0;
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .index-list li {
+        flex: 1 1 calc(50% - 10px);
+        text-align: center;
+    }
+
+ 
+
+    .card:active::before {
+        transition-delay: 0.2s;
+        transform: scale(40);
+    }
+
+    .btn-article {
+        margin-left: 0px;
+        margin-top: 5px;
+    }
+
+    .container {
+        margin-top: 80px;
+    }
+}
+
+/* Colori aggiuntivi */
+.blog-title {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Effetto sfocato del contenitore articolo in modalità dark */
+.dark-mode .container-articolo {
+    position: relative;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+}
+
+.container-articolo {
+    position: relative;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+}
+
+.btn-article {
+    background-color: #6a11cb;
+    margin-left: 20px;
+}
+
+.btn-article:hover {
+    background-color: #F75A49;
 }
 
 @media screen and (max-width: 768px) {
-    .carousel-control-prev,
-    .carousel-control-next {
-        position: absolute;
-        bottom: 20px; /* Posiziona i pulsanti fissi in basso */
-        width: auto;
-        height: 40px; /* Altezza fissa per i pulsanti */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translateY(0); /* Assicura che non ci sia traslazione verticale */
+    .btn-article {
+        margin-left: 0px;
+        margin-top: 5px;
     }
-  
-    .carousel-control-prev {
-        left: 10px; /* Posiziona il pulsante di sinistra */
-    }
-  
-    .carousel-control-next {
-        right: 10px; /* Posiziona il pulsante di destra */
-    }
-  
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 10px;
-        border-radius: 50%;
-        height: 100%; /* Occupa l'altezza del contenitore del pulsante */
-    }
-  }
+}

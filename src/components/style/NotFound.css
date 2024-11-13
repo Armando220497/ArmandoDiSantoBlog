@@ -24,25 +24,30 @@
     font-size: 1rem;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  
   }
   
   .back-btn {
-    background-color: #ff6347;
-    color: white;
+    background-color: #7929D0;
   }
   
-  .back-btn:hover {
-    background-color: #ff4500;
-  }
+
   
   .home-btn {
-    background-color: #4caf50;
-    color: white;
+    background-color: #DD3E4F;
   }
   
+ 
   .home-btn:hover {
-    background-color: #388e3c;
+    background-color: #DD3E4F;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
   }
-  
+
+  .back-btn:hover {
+    background-color: #7929D0;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+

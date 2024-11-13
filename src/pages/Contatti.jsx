@@ -83,7 +83,7 @@ function Contatti({ darkMode }) {
 
 // Aggiungi la validazione delle props
 Contatti.propTypes = {
-  darkMode: PropTypes.bool.isRequired, // `darkMode` è una prop di tipo booleano e obbligatoria
+  darkMode: PropTypes.bool.isRequired,
 };
 
 export default Contatti;

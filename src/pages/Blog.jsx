@@ -1,95 +1,73 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../components/style/blog.css";
-import { useEffect, useState, useRef } from "react";
+import articlesData from "../article.json";
 
 function Blog() {
-  const [articles, setArticles] = useState([]);
-  const carouselInnerRef = useRef(null);
+  const articles = articlesData;
+  const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
+  // Funzione per rilevare la larghezza dello schermo
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/Armando220497/Blog-articles/main/articles.json"
-    )
-      .then((response) => response.json())
-      .then((articleUrls) => {
-        return Promise.all(
-          articleUrls.map((url) => fetch(url).then((res) => res.json()))
-        );
-      })
-      .then((data) => {
-        setArticles(data);
-      })
-      .catch((error) =>
-        console.error("Errore nel caricamento degli articoli:", error)
-      );
-  }, []);
-
-  useEffect(() => {
-    const handleSlide = () => {
-      if (carouselInnerRef.current) {
-        carouselInnerRef.current.scrollTop = 0;
-      }
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Considera mobile quando la larghezza è <= 768px
     };
 
-    const carouselElement = document.querySelector("#articlesCarousel");
-    carouselElement.addEventListener("slide.bs.carousel", handleSlide);
+    handleResize(); // Chiamata iniziale per impostare lo stato
+    window.addEventListener("resize", handleResize);
 
+    // Rimuovere l'event listener quando il componente è smontato
     return () => {
-      carouselElement.removeEventListener("slide.bs.carousel", handleSlide);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const handleCardClick = (id) => {
+    if (isMobile && !isAnimating) {
+      setIsAnimating(true);
+      // Esegui l'animazione sulla card
+      setTimeout(() => {
+        navigate(`/article/${id}`); // Usa navigate per spostarsi alla pagina dell'articolo
+      }, 900); // Durata dell'animazione in ms
+    } else if (!isMobile) {
+      // Se non è mobile, vai direttamente alla pagina dell'articolo senza animazione
+      navigate(`/article/${id}`);
+    }
+  };
 
   return (
     <>
-      <h1 className="blog-title">Blog</h1>
+      <h1 className="blog-title text-center">Blog</h1>
 
       <div className="container mt-5">
-        <div id="articlesCarousel" className="carousel slide">
-          <div ref={carouselInnerRef} className="carousel-inner">
-            {articles.map((article, index) => (
+        <div className="row">
+          {articles.map((article) => (
+            <div key={article.id} className="col-12 col-sm-6 col-md-4 mb-4">
+              {/* Rendi cliccabile l'intera card */}
               <div
-                key={index}
-                className={`carousel-item ${index === 0 ? "active" : ""}`}
+                className="card h-100"
+                onClick={() => handleCardClick(article.id)} // Gestisci il clic sulla card
               >
-                <div className="d-flex flex-column align-items-center text-center p-4">
-                  <h2 className="article-title">{article.title}</h2>
-                  <div
-                    className="article-content"
-                    dangerouslySetInnerHTML={{ __html: article.content }}
-                  ></div>
-                  <small>
-                    {article.date} - {article.author}
-                  </small>
+                <div className="card-body">
+                  <h5 className="card-title">{article.title}</h5>
+                  <p className="card-date">
+                    <small>Pubblicato il: {article.date}</small>
+                  </p>
+                  <p
+                    className="card-text"
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        article.content.length > 100
+                          ? `${article.content.substring(0, 100)}...`
+                          : article.content,
+                    }}
+                  ></p>
                 </div>
               </div>
-            ))}
-          </div>
-
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#articlesCarousel"
-            data-bs-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#articlesCarousel"
-            data-bs-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
+            </div>
+          ))}
         </div>
       </div>
     </>

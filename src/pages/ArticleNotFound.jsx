@@ -1,30 +1,27 @@
-import PropTypes from "prop-types"; // Importa PropTypes
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import "../components/style/NotFound.css";
 
-const NotFound = ({ darkMode }) => {
-  // Destrutturazione corretta della prop darkMode
+const ArticleNotFound = ({ darkMode }) => {
   const navigate = useNavigate();
 
   const goBack = () => {
-    // Se la cronologia del browser è disponibile, torna indietro
-    navigate(-1);
+    navigate("/Blog");
   };
 
   const goHome = () => {
-    // Altrimenti, naviga alla Home
     navigate("/");
   };
 
   return (
     <div className={`notfound-container ${darkMode ? "dark-mode" : ""}`}>
-      {" "}
-      {/* Applica darkMode dinamicamente */}
-      <h1 className="notfound-title">404 - Pagina non trovata</h1>
-      <p className="notfound-text">La pagina che stai cercando non esiste.</p>
+      <h1 className="notfound-title">404 - Articolo non trovato</h1>
+      <p className="notfound-text">
+        L&apos;articolo che stai cercando non esiste.
+      </p>
       <div className="notfound-buttons">
         <button className="btn back-btn" onClick={goBack}>
-          Torna indietro
+          Torna agli articoli
         </button>
         <button className="btn home-btn" onClick={goHome}>
           Vai alla Home
@@ -34,9 +31,8 @@ const NotFound = ({ darkMode }) => {
   );
 };
 
-// Validazione delle props
-NotFound.propTypes = {
+ArticleNotFound.propTypes = {
   darkMode: PropTypes.bool.isRequired, // Assicurati che darkMode venga passato come prop
 };
 
-export default NotFound;
+export default ArticleNotFound;

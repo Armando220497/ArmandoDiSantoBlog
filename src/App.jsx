@@ -5,6 +5,10 @@ import Card from "./components/Card";
 import Chisono from "./pages/ChiSono";
 import Contatti from "./pages/Contatti";
 import Blog from "./pages/Blog";
+import ArticleDetails from "./components/ArticleDetails";
+
+import ArticleNotFound from "./pages/ArticleNotFound"; // Importa la pagina ArticleNotFound
+
 import NotFound from "./pages/NotFound";
 
 import { Routes, Route } from "react-router-dom";
@@ -56,8 +60,17 @@ function App() {
             }
           />
           <Route path="/contatti" element={<Contatti darkMode={darkMode} />} />
-          <Route path="/blog" element={<Blog />} /> {/* Corretto */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="/blog" element={<Blog darkMode={darkMode} />} />{" "}
+          {/* Corretto */}
+          <Route
+            path="/article/:id"
+            element={<ArticleDetails darkMode={darkMode} />}
+          />
+          <Route path="*" element={<NotFound darkMode={darkMode} />} />{" "}
+          <Route
+            path="/article-not-found"
+            element={<ArticleNotFound darkMode={darkMode} />}
+          />
         </Routes>
       </div>
     </>
