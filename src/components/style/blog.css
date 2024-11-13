@@ -268,3 +268,9 @@
         margin-top: 5px;
     }
 }
+
+/* Disabilita la selezione del testo sulla card */
+.card {
+    user-select: none; /* Disabilita la selezione del testo */
+  }
+  
