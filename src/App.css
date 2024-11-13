@@ -138,3 +138,7 @@ body.dark-mode .tooltip-text::before {
       color: grey;
     }
 }
+
+* {
+  user-select: none; /* Disabilita la selezione del testo su tutti gli elementi */
+}
