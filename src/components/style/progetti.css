@@ -30,16 +30,16 @@
   }
   
   .custom-carousel {
-    max-width: 800px; /* Larghezza massima */
-    height: 400px; /* Altezza */
-    margin: 0 auto; /* Centra il carosello */
+    max-width: 800px; 
+    height: 400px; 
+    margin: 0 auto; 
   }
   
   .custom-carousel .carousel-item img {
-    object-fit: cover; /* Adatta l'immagine */
-    height: 100%; /* Mantieni l'altezza del carosello */
-    width: 100%; /* Mantieni la larghezza del carosello */
-    border-radius: 10px; /* Aggiungi angoli arrotondati se necessario */
+    object-fit: cover; 
+    height: 100%; 
+    width: 100%; 
+    border-radius: 10px; 
   }
 
   .carousel-caption a.btn {
@@ -59,8 +59,8 @@
   
   @media screen and (max-width: 768px) {
     .custom-carousel {
-      max-width: 100%; /* Larghezza massima */
-      height: 200px; /* Altezza */
+      max-width: 100%; 
+      height: 200px; 
     }
 
 
