@@ -14,6 +14,24 @@
     font-size: larger;
 }
 
+.icon-container{
+    display: flex;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra orizzontalmente */
+    text-align: center; /* Allinea il testo al centro */
+}
+
+.icon-container a:hover {
+    transform: translateY(-3px); /* Ingrossa leggermente l'icona */
+    transition: transform 0.3s ease; /* Aggiunge un'animazione fluida */
+  }
+  
+  .icon-container .btn:hover {
+    transform: translateY(-3px); /* Alza leggermente il bottone */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #ff5733; /* Cambia colore quando si passa sopra */
+  }
+
 /* Media query per dispositivi mobili (max-width: 768px) */
 @media screen and (max-width: 768px) {
     .chisono-container {

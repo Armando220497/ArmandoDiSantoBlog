@@ -63,6 +63,14 @@ function CustomNavbar() {
             >
               Contatti
             </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/progetti"
+              className="active-nav"
+              onClick={handleNavLinkClick}
+            >
+              Progetti
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

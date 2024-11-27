@@ -22,7 +22,7 @@ function Card() {
           <h1 className="mt-5">
             Armando <br /> Di Santo{" "}
           </h1>
-          <h4>Junior Web Developer</h4>
+          <h4>Web Developer</h4>
           <a
             href="https://www.linkedin.com/in/armando-di-santo-06415b273"
             target="_blank"

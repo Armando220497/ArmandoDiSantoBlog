@@ -1,0 +1,95 @@
+.progetti-title{
+    font-size: 2.5em;
+    font-weight: bold;
+    background: linear-gradient(180deg, #6a11cb, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.3;
+}
+
+.carousel img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .carousel img:hover {
+    transform: scale(1.05);
+  }
+  
+  .carousel-caption h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .carousel-caption p {
+    font-size: 1.2rem;
+    color: #ddd;
+  }
+  
+  .custom-carousel {
+    max-width: 800px; /* Larghezza massima */
+    height: 400px; /* Altezza */
+    margin: 0 auto; /* Centra il carosello */
+  }
+  
+  .custom-carousel .carousel-item img {
+    object-fit: cover; /* Adatta l'immagine */
+    height: 100%; /* Mantieni l'altezza del carosello */
+    width: 100%; /* Mantieni la larghezza del carosello */
+    border-radius: 10px; /* Aggiungi angoli arrotondati se necessario */
+  }
+
+  .carousel-caption a.btn {
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #6a11cb, #ff4b2b);
+    border: none;
+    text-transform: uppercase;
+  }
+  
+  .carousel-caption a.btn:hover {
+    background-color: #ff5733;
+    text-decoration: none;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .custom-carousel {
+      max-width: 100%; /* Larghezza massima */
+      height: 200px; /* Altezza */
+    }
+
+
+ 
+
+    
+    .carousel-caption a.btn {
+      font-size: 0.8rem;
+      padding: 8px 16px;
+      position: fixed;
+      margin-top: 10vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }   
+    
+    .progetti-title{
+        font-size: 2em;
+    }   
+    
+    .carousel-caption h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        background: linear-gradient(180deg, #6a11cb, #ff4b2b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.3;
+    }
+    
+   
+  }

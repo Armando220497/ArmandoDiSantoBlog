@@ -6,6 +6,7 @@ import Chisono from "./pages/ChiSono";
 import Contatti from "./pages/Contatti";
 import Blog from "./pages/Blog";
 import ArticleDetails from "./components/ArticleDetails";
+import Progetti from "./pages/Progetti";
 
 import ArticleNotFound from "./pages/ArticleNotFound"; // Importa la pagina ArticleNotFound
 
@@ -61,7 +62,7 @@ function App() {
           />
           <Route path="/contatti" element={<Contatti darkMode={darkMode} />} />
           <Route path="/blog" element={<Blog darkMode={darkMode} />} />{" "}
-          {/* Corretto */}
+          <Route path="/progetti" element={<Progetti darkMode={darkMode} />} />
           <Route
             path="/article/:id"
             element={<ArticleDetails darkMode={darkMode} />}
