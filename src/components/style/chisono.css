@@ -70,7 +70,6 @@
         flex-direction: column;
         justify-content: center; /* Centra verticalmente */
         align-items: center; /* Centra orizzontalmente */
-        height: 50vh; /* Usa l'intera altezza della finestra per il centering verticale */
         text-align: center; /* Allinea il testo al centro */
     }
 }
