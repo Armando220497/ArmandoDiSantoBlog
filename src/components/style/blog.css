@@ -116,7 +116,7 @@
 .card {
     border-radius: 10px;
     max-width: 400px;
-    height: 180px;
+    height: 19vh;
     background-color: rgba(255, 255, 255, 0.1);
     color: black;
     padding: 5px;
@@ -134,7 +134,7 @@
 .dark-mode .card {
     border-radius: 10px;
     max-width: 400px;
-    height: 180px;
+    height: 19vh;
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
     padding: 5px;
@@ -152,6 +152,7 @@
 .card::before {
     content: "";
     position: absolute;
+    
     z-index: -1;
     top: -1px;
     right: -15px;

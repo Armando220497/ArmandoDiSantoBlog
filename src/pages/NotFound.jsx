@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"; // Importa PropTypes
 import { useNavigate } from "react-router-dom";
-import "../components/style/NotFound.css";
+import "../components/style/not-found.css";
 
 const NotFound = ({ darkMode }) => {
   // Destrutturazione corretta della prop darkMode

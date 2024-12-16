@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types"; // Aggiungi PropTypes
 import "./style/navbar.css";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function CustomNavbar() {
+function CustomNavbar({ darkMode, toggleDarkMode }) {
   const [expanded, setExpanded] = useState(false);
 
   const handleNavLinkClick = () => {
-    setExpanded(false); // Chiude la navbar dopo aver cliccato un link
+    setExpanded(false);
   };
 
   return (
@@ -31,18 +34,17 @@ function CustomNavbar() {
           onClick={() => setExpanded(!expanded)}
         >
           <img
-            src="/img/nav-icon.png" // Percorso dell'icona nella cartella public
+            src="/img/nav-icon.png"
             alt="Menu"
             className="custom-toggle-icon"
           />
         </Navbar.Toggle>
-        <Navbar.Collapse id="navbarNavAltMarkup">
+        <Navbar.Collapse id="navbarNavAltMarkup" className="custom-collapse">
           <Nav className="navbar-nav">
             <Nav.Link
               as={Link}
               to="/"
               className="active-nav"
-              aria-current="page"
               onClick={handleNavLinkClick}
             >
               Home
@@ -73,9 +75,27 @@ function CustomNavbar() {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+
+        {/* Toggle Dark Mode */}
+        <FontAwesomeIcon
+          icon={darkMode ? faSun : faMoon}
+          onClick={toggleDarkMode}
+          className="dark-mode-icon"
+          style={{
+            cursor: "pointer",
+            fontSize: "1.5rem",
+            marginLeft: "1rem",
+          }}
+        />
       </Container>
     </Navbar>
   );
 }
+
+// Aggiungi la validazione delle proprietà
+CustomNavbar.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+  toggleDarkMode: PropTypes.func.isRequired,
+};
 
 export default CustomNavbar;

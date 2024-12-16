@@ -1,0 +1,47 @@
+/* Footer: fisso alla fine */
+footer {
+  display: flex; /* Usa flexbox per disporre gli elementi */
+  flex-direction: column; /* Dispone gli elementi in colonna */
+  justify-content: center; /* Allinea verticalmente al centro */
+  align-items: center; /* Allinea orizzontalmente al centro */
+  background-color: #222;
+  color: white;
+  padding: 20px 30px; /* Aggiungi padding per dare più spazio al footer */
+  height: 10vh; /* Mantieni l'altezza ridotta */
+  text-align: center; /* Allinea il testo al centro */
+}
+
+footer p {
+  margin: 0; /* Rimuove il margine predefinito per evitare spazi extra */
+}
+
+footer .list-inline {
+  display: flex; /* Usa flexbox per disporre gli elementi orizzontalmente */
+  justify-content: center; /* Centra gli elementi orizzontalmente */
+  padding: 0;
+  margin: 0;
+}
+
+footer .list-inline-item {
+  margin-right: 20px; /* Spaziatura tra le icone */
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem; /* Aggiungi una dimensione del testo per una visibilità migliore */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Aggiungi un sottolineato al passaggio del mouse */
+}
+
+footer .list-inline-item:last-child {
+  margin-right: 0; /* Rimuove la spaziatura a destra dell'ultimo elemento */
+}
+
+@media screen and (max-width: 768px) {
+  footer{
+    height: 15vh;
+  }
+}

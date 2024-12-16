@@ -2,20 +2,11 @@ import PropTypes from "prop-types"; // Importa PropTypes
 import { Container, Row, Col } from "react-bootstrap";
 import "../components/style/contatti.css";
 
-function Contatti({ darkMode }) {
+function Contatti() {
   return (
     <>
-      <div className="decorazione">
-        {/* Usa il prop `darkMode` per decidere quale immagine mostrare */}
-        <img
-          src={darkMode ? "/img/aereo-bianco.png" : "/img/aereo-nero.png"}
-          alt="Decorazione"
-          className="small-img"
-        />
-      </div>
-
       <Container className="contatti-container mt-5">
-        <h1 className="contatti-title">Contatti & Social</h1>
+        <h1 className="title-style">Contatti & Social</h1>
 
         <Row className="mt-5">
           <Col md={6} className="contatti-section">

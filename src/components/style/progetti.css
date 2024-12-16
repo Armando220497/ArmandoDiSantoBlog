@@ -1,95 +1,69 @@
-.progetti-title{
-    font-size: 2.5em;
-    font-weight: bold;
-    background: linear-gradient(180deg, #6a11cb, #ff4b2b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    line-height: 1.3;
+.progetto-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.carousel img {
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+.progetto-card-img {
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.progetto-card-body {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.progetto-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.progetto-btn {
+  font-size: 1rem;
+  padding: 10px 10px;
+  background: linear-gradient(90deg, #6a11cb, #ff4b2b);
+  border: none;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progetto-btn:hover {
+  background-color: #ff5733;
+  text-decoration: none;
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .progetti-title {
+    font-size: 2em;
   }
-  
-  .carousel img:hover {
-    transform: scale(1.05);
+
+  .progetto-card {
+    margin-bottom: 20px;
   }
-  
-  .carousel-caption h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+
+  .progetto-card-img {
+    height: 150px;
   }
-  
-  .carousel-caption p {
+
+  .progetto-card-title {
     font-size: 1.2rem;
-    color: #ddd;
-  }
-  
-  .custom-carousel {
-    max-width: 800px; 
-    height: 400px; 
-    margin: 0 auto; 
-  }
-  
-  .custom-carousel .carousel-item img {
-    object-fit: cover; 
-    height: 100%; 
-    width: 100%; 
-    border-radius: 10px; 
   }
 
-  .carousel-caption a.btn {
-    margin-top: 10px;
-    font-size: 1rem;
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #6a11cb, #ff4b2b);
-    border: none;
-    text-transform: uppercase;
+  .progetto-btn {
+    font-size: 0.8rem;
+    padding: 8px 16px;
   }
-  
-  .carousel-caption a.btn:hover {
-    background-color: #ff5733;
-    text-decoration: none;
-  }
-  
-  
-  @media screen and (max-width: 768px) {
-    .custom-carousel {
-      max-width: 100%; 
-      height: 200px; 
-    }
-
-
- 
-
-    
-    .carousel-caption a.btn {
-      font-size: 0.8rem;
-      padding: 8px 16px;
-      position: fixed;
-      margin-top: 10vh;
-      left: 50%;
-      transform: translateX(-50%);
-    }   
-    
-    .progetti-title{
-        font-size: 2em;
-    }   
-    
-    .carousel-caption h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        background: linear-gradient(180deg, #6a11cb, #ff4b2b);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
-        line-height: 1.3;
-    }
-    
-   
-  }
+}

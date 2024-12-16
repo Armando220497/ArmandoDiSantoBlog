@@ -1,144 +1,136 @@
-body {
-background-color:#FFFFFF ;
+/* Garantire altezza totale della pagina */
+html, body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF; 
+  overflow-x: hidden;
+}
+
+/* Blocca la selezione del testo in tutto il sito */
+* {
+  user-select: none; 
 }
 
 
-.margin-top{
-  margin-top: 10%;
-}
-/* Modalità scura */
-body.dark-mode {
-  background-color: #1E1E1E ;
-  color: #f1f1f1;
+/* Root container che occupa tutta l'altezza */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; 
 }
 
-
-.toggle-icon {
-  position: absolute;
-  top: -10px; /* Regola per posizionare l'elemento in alto */
-  left: 50%; /* Posiziona l'elemento al centro orizzontalmente */
-  transform: translateX(-50%); /* Centra esattamente l'icona */
-  width: 250px; /* Dimensioni dell'icona */
-  cursor: pointer;
-  z-index: 1000;
+.title-style {
+   
+  font-weight:20;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #6a11cb, #ff4b2b); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 2px;
 }
 
+.testo {
+  color: #4F4F4F;
+  font-size: 1.2rem;
+}
+.main-title {
+  font-weight:400;
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #6a11cb, #ff4b2b); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
 
-@media screen and (max-width: 768px) {
+.main-content {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  padding: 2vh;
+}
+
+.first-row {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-evenly; 
+  align-items: flex-start; 
+  
+  margin-top: 10vh !important;
+}
+
+.second-row {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-evenly; 
+  align-items: flex-start; 
+
+  margin-top: 10vh !important;}
+  
+  /* Modalità scura */
+  body.dark-mode {
+    background-color: #1E1E1E ;
+    color: #f1f1f1; 
+  }
+  
+  
   .toggle-icon {
     position: absolute;
-    top: -10px;
-    left: 240px;
-    width: 180px; /* Dimensioni dell'icona */
+    top: -3vh; 
+    right: -5vh; 
+    width: 250px; 
     cursor: pointer;
     z-index: 1000;
   }
+  
 
+
+  
+  
+  
+  .toggle-icon {
+    position: absolute;
+  }
+  
+
+
+/* Navbar in modalità scura */
+body.dark-mode .navbar {
+  background-color: #1E1E1E !important; 
+   
 }
 
-.decorazione {
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(90deg, #6a11cb, #ff4b2b);
-  border-radius: 50% 50% 0% 100% / 0% 0% 100% 100% ;
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  opacity: 0.9;
-  z-index: -1; /* Assicura che la forma stia dietro al contenuto principale */
+body.dark-mode p{
+color: #CCCCCC;
 }
 
-.decorazione2 {
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(90deg, #6a11cb, #ff4b2b);
-  border-radius:0% 100% 100% 0% / 0% 100% 0% 100%  ;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.9;
-  z-index: -1; /* Assicura che la forma stia dietro al contenuto principale */
+body.dark-mode ul{
+color: #CCCCCC;
 }
 
-.toggle-icon {
-  position: absolute;
+@media (max-width: 768px) {
+  .first-row {
+    flex-direction: column; 
+    align-items: center; 
+
+  
+
+ 
 }
 
-.tooltip-text {
-  font-size: 0.8em; /* Testo piccolo */
-  color: grey;
-  position: absolute;
-  top: 120px; /* Posiziona la scritta sotto l'icona */
-  left: 54%;
-  transform: translateX(-50%);
-  text-align: center;
-  cursor: pointer;
+  /* Nasconde la scrollbar su dispositivi mobili e tablet */
+@media (max-width: 768px) {
+  /* Nascondi la scrollbar su tutto il body */
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
-
-.tooltip-text::before {
-  content: "← "; /* Freccia rivolta verso sinistra */
-  font-size: 1em;
-  color: grey;
 }
-
-/* Cambia colore del testo in modalità scura */
-body.dark-mode .tooltip-text {
-  color: white;
-}
-
-body.dark-mode .tooltip-text::before {
-  color: white;
-}
+  
 
 
-
-
-@media screen and (max-width: 768px) {
-  .decorazione {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(90deg, #6a11cb, #ff4b2b);
-      border-radius: 50% 50% 0% 100% / 0% 0% 100% 100% ;
-      position: fixed;
-      top: 0px;
-      right: 0px;
-      opacity: 0.9;
-      z-index: -1; /* Assicura che la forma stia dietro al contenuto principale */
-    }  
-    .decorazione2 {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(90deg, #6a11cb, #ff4b2b);
-      border-radius:0% 100% 100% 0% / 0% 100% 0% 100%  ;
-      position: fixed;
-     bottom: 0px;
-      left: 0px;
-      opacity: 0.9;
-      z-index: -1; /* Assicura che la forma stia dietro al contenuto principale */
-    }
-
-    .tooltip-text {
-      font-size: 0.8em; /* Testo piccolo */
-      color: grey;
-      position: absolute;
-      top: 80px; /* Posiziona la scritta sotto l'icona */
-      left: 48%;
-      transform: translateX(-50%);
-      text-align: center;
-      cursor: pointer;
-    }
-    
-    .tooltip-text::before {
-      content: ""; /* Rimuove la freccia a sinistra */
-    }
-
-    .tooltip-text::after {
-      content: " →"; /* Freccia rivolta verso sinistra */
-      font-size: 1em;
-      color: grey;
-    }
-}
-
-* {
-  user-select: none; /* Disabilita la selezione del testo su tutti gli elementi */
-}
+ 

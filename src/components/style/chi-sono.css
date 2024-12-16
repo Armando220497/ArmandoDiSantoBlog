@@ -1,0 +1,73 @@
+/* Contenitore delle icone */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+/* Hover sulle icone */
+.icon-container a:hover {
+  transform: translateY(-3px);
+  transition: transform 0.3s ease;
+}
+
+/* Hover sui bottoni */
+.icon-container .btn:hover {
+  transform: translateY(-3px);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: #ff5733;
+}
+
+/* Pulsante curriculum personalizzato */
+.btn-curriculum {
+  background: linear-gradient(90deg, #6a11cb, #ff4b2b);
+  border: none;
+  padding: 5px 10px !important;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-curriculum:hover {
+  background-color: #ff4b2b;
+}
+
+/* Media query per dispositivi mobili (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .chisono {
+      font-size: 2em;
+  }
+
+  .testo {
+      font-size: 1.2em;
+  }
+}
+
+/* Media query per tablet (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .chisono-container {
+      margin-top: 15%;
+      margin-bottom: 15%;
+      text-align: center;
+  }
+
+  .chisono {
+      font-size: 2.2em;
+  }
+
+  .testo {
+      font-size: 1.4em;
+  }
+
+  .chisono-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+}

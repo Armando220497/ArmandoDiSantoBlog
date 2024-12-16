@@ -31,19 +31,11 @@
     text-decoration: none;
 }
 
-/* Decorazioni */
-.small-img {
-    width: 100px; /* Imposta la larghezza desiderata */
-    height: auto; /* Mantiene le proporzioni */
-    position: absolute;
-    top: 80px;
-    right: 660%;
-}
 
 @media screen and (max-width: 768px) {
     .small-img {
-        width: 50px; /* Imposta la larghezza desiderata */
-        height: auto; /* Mantiene le proporzioni */
+        width: 50px; 
+        height: auto;
         position: absolute;
         left: 0%;
         top: 600%;

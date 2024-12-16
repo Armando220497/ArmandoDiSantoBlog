@@ -1,41 +1,31 @@
-import "./style/card.css";
-// Importa il componente FontAwesomeIcon
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// Importa l'icona specifica di Font Awesome (ad esempio l'icona di LinkedIn)
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Importa anche JS di Bootstrap per la funzionalità dei componenti come collapse
+import "./style/card.css";
 
 function Card() {
   return (
-    <div className="flip-card">
-      <div className="flip-card-inner">
-        <div className="flip-card-front">
-          <img
-            className="card-img-custom"
-            src="/img/immagineDiProfilo.jpeg"
-            alt="example"
-            style={{ width: "18rem", height: "18rem" }}
-          />
-        </div>
-        <div className="flip-card-back">
-          <h1 className="mt-5">
-            Armando <br /> Di Santo{" "}
-          </h1>
-          <h4>Web Developer</h4>
-          <a
-            href="https://www.linkedin.com/in/armando-di-santo-06415b273"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              size="2x"
-              style={{ color: "white" }}
+    <div className="container container-card">
+      <h1 className="mb-3 text-center main-title">Web Developer</h1>
+
+      <section className="card-flip-container">
+        <div className="card-flip">
+          {/* Lato Frontale */}
+          <div className="card-front">
+            <img
+              className="card-img-custom"
+              src="/img/foto-profilo.png"
+              alt="Armando Di Santo"
             />
-          </a>
+          </div>
+
+          {/* Lato Posteriore */}
+          <div className="card-back">
+            <p>
+              Ciao! Sono Armando, un Web Developer appassionato di creare siti
+              web moderni e funzionali. 🚀
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
